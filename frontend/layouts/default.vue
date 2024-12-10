@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-dvh flex flex-col justify-between gap-5">
+  <div class="min-h-dvh flex flex-col justify-between">
     <Header />
     <div class="flex justify-center flex-grow items-center">
       <slot  />

@@ -4,8 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'],
+    '@pinia/nuxt'
+  ],
   app: {
-    // baseURL: '/1app1week/flick-pick/',
-  }
+    baseURL: '/1app1week/flick-pick/',
+  },
+  runtimeConfig: {
+    public: {
+      tmdbApiKey: process.env.TMDB_API_KEY,
+    },
+  },
 })
