@@ -99,6 +99,9 @@ const route = useRoute();
 const modalState = ref(false);
 const loading = ref(true);
 
+const config = useRuntimeConfig();
+const baseURL = config.app.baseURL;
+
 // Modal toggle
 const toggleModal = () => {
   modalState.value = !modalState.value;
@@ -123,7 +126,7 @@ const votePercentage = computed(() => {
 
 // Helper functions
 const getImageUrl = (path: string) =>
-  path ? `https://image.tmdb.org/t/p/original${path}` : "/img/default-poster.png";
+  path ? `https://image.tmdb.org/t/p/original${path}` : `${baseURL}img/default-poster.png`;
 
 // Fetch another random movie
 const fetchAnotherRandomMovie = async () => {
