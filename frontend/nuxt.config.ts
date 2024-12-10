@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
   app: {
-    baseURL: '/1app1week/flick-pick/',
+    baseURL: '/1app1week/flick/',
   },
   runtimeConfig: {
     public: {

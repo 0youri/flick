@@ -4,7 +4,7 @@
         @0youri
       </NuxtLink>
       <span>•</span>
-      <NuxtLink to="https://github.com/0youri/flick-pick" class="cursor-pointer" target="_blank">
+      <NuxtLink to="https://github.com/0youri/flick" class="cursor-pointer" target="_blank">
         github repo
       </NuxtLink>
       

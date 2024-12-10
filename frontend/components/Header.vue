@@ -4,7 +4,7 @@
         🚧 demo 
       </span>
       <NuxtLink to="/" class="w-full text-xl bg-primary-light py-4 cursor-pointer">
-        { flick-pick }
+        { flick }
       </NuxtLink>
     </header>
   </template>
