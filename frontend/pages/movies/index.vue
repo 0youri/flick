@@ -12,7 +12,7 @@
         v-for="path in paths"
         :key="path.title"
         :to="`/movies/${path.link}`"
-        class="border-2 border-accent-sky text-accent-sky w-full px-6 py-3 text-lg md:text-md rounded-2xl hover:bg-accent-sky hover:text-white"
+        class="border-2 border-accent-sky text-accent-sky w-full px-6 py-3 text-lg md:text-md rounded-2xl lg:hover:bg-accent-sky lg:hover:text-white"
       >
         {{ path.title || 'Unknown Path' }}
       </NuxtLink>
