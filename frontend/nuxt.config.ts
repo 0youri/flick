@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'],
+    '@pinia/nuxt'
+  ],
   app: {
     // baseURL: '/1app1week/flick-pick/',
   },

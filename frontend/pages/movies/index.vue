@@ -19,6 +19,16 @@
 </template>
 
 <script lang="ts" setup>
+
+  import { useMovieStore } from "~/stores/movieStore";
+  const { getGenres, getRandomGenre } = useMovieStore();
+
+
+  onMounted(async () => {
+    await getGenres()
+  });
+
+
   const paths = ref([
     {
       title: 'your mood 🧐',
@@ -30,7 +40,7 @@
     },
     {
       title: 'random genre 🎲',
-      link: 'genres'
+      link: 'genres/random'
     },
   ])
 </script>

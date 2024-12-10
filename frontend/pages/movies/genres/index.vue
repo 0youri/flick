@@ -9,7 +9,7 @@
       <NuxtLink
         v-for="genre in genres"
         :key="genre.id"
-        :to="{ name: 'movies-genres-genre', params: { genre: genre.name.toLowerCase() } }"
+        :to="{ name: 'movies-genres-genre', params: { genre: getGenreById(genre.id).slug } }"
         class="border-2 border-accent-sky text-accent-sky w-full px-6 py-3 text-lg md:text-md rounded-2xl hover:bg-accent-sky hover:text-white"
       >
         {{ genre.name }} {{ genre.emoji }}
@@ -19,10 +19,9 @@
 </template>
 
 <script setup>
-
   import { useMovieStore } from "~/stores/movieStore";
 
-  const { getGenres } = useMovieStore();
+  const { getGenres, getGenreById } = useMovieStore();
   const { genres } = storeToRefs(useMovieStore());
 
   onMounted(() => {
