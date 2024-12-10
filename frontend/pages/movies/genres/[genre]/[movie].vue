@@ -24,8 +24,19 @@
               <span v-if="genres">🎥 {{ genres }}</span>
               <span v-if="runtimeFormatted">⏳ {{ runtimeFormatted }}</span>
               <span v-if="votePercentage">
-                ⭐ <span class="text-yellow-400 font-medium">{{ votePercentage }}</span>
-                <span class="text-primary font-medium text-xs"> ({{ randomMovie?.vote_count }} review)</span>
+                ⭐ 
+                <span 
+                  :class="{
+                    'text-green-500': votePercentage >= 75,
+                    'text-yellow-400': votePercentage >= 50 && votePercentage < 75,
+                    'text-red-500': votePercentage < 50
+                  }" 
+                  class="font-medium">
+                  {{ votePercentage }}%
+                </span>
+                <span class="text-primary font-medium text-xs">
+                  ({{ randomMovie?.vote_count }} review)
+                </span>
               </span>
             </div>
           </div>
@@ -121,7 +132,7 @@ const runtimeFormatted = computed(() => {
 });
 const votePercentage = computed(() => {
   const vote = randomMovie.value?.vote_average || 0;
-  return `${((vote / 10) * 100).toFixed(0)}%`;
+  return (vote * 10).toFixed(0);
 });
 
 // Helper functions
