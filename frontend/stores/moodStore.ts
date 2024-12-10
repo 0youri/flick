@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 export const useMoodStore = defineStore("moodStore", () => {
   // State
@@ -6,19 +6,19 @@ export const useMoodStore = defineStore("moodStore", () => {
     {
       id: 1,
       title: "feel-good",
-      emoji: '🌞',
+      emoji: "🌞",
       genres: [35, 10751, 16, 10402], // Comedy, Family, Animation, Music
     },
     {
       id: 2,
       title: "chill",
-      emoji: '😌',
+      emoji: "😌",
       genres: [99, 18, 10770, 10402], // Documentary, Drama, TV Movie, Music
     },
     {
       id: 3,
       title: "thrilling",
-      emoji: '⚡',
+      emoji: "⚡",
       genres: [28, 53, 80, 9648], // Action, Thriller, Crime, Mystery
     },
     {
@@ -53,34 +53,21 @@ export const useMoodStore = defineStore("moodStore", () => {
     },
   ]);
 
-
   // Get all moods
-  const getMoods = () => {
-    return moods.value;
-  };
+  const getMoods = (): typeof moods.value => moods.value;
 
   // Get mood by ID
-  const getMoodById = (id: number) => {
+  const getMoodById = (id: number): typeof moods.value[0] | null => {
     return moods.value.find((mood) => mood.id === id) || null;
   };
 
-
-  const getRandomGenreId = (moodId: number) => {
+  // Get a random genre ID for a given mood
+  const getRandomGenreId = (moodId: number): number => {
     const mood = getMoodById(moodId);
     if (!mood || mood.genres.length === 0) {
       throw new Error(`No genres available for mood with ID ${moodId}`);
     }
-    const randomIndex = Math.floor(Math.random() * mood.genres.length);
-    return mood.genres[randomIndex];
-  };
-
-  const getMoodSlug = (moodId: number) => {
-    const mood = getMoodById(moodId);
-    if (!mood) {
-      throw new Error(`Mood with ID ${moodId} not found`);
-    }
-    const slug = `${mood.id}-${mood.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
-    return slug;
+    return mood.genres[Math.floor(Math.random() * mood.genres.length)];
   };
 
   return {
@@ -88,7 +75,5 @@ export const useMoodStore = defineStore("moodStore", () => {
     getMoods,
     getMoodById,
     getRandomGenreId,
-    getMoodSlug,
-  }
-
-})
+  };
+});
