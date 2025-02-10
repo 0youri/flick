@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   ],
   app: {
     baseURL: '/apps/flick/',
+    head: {
+      title: 'Flick 🎬',
+    },
   },
   runtimeConfig: {
     public: {
