@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# 🎬 Flick – The App That Picks Your Next Movie
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Flick** is a smart movie picker built in just one week as part of my 1 App in 1 Week Challenge. It helps you decide what to watch based on your mood or genre—instantly, stress-free.
 
-## Setup
+🧪 **Try it now** → [https://1app1week-flick.netlify.app/](https://1app1week-flick.netlify.app/)
 
-Make sure to install dependencies:
+---
+
+## ⚙️ Tech Stack
+
+- **Framework**: [Nuxt 3](https://nuxt.com)
+- **Language**: [TypeScript](https://www.typescriptlang.org)
+- **Design**: [TailwindCSS](https://tailwindcss.com)
+- **State Management**: [Pinia](https://pinia.vuejs.org)
+- **Animations**: [GSAP](https://greensock.com/gsap/)
+- **API**: [TMDB](https://www.themoviedb.org/documentation/api)
+- **Deployment**: [Netlify](https://www.netlify.com)
+
+---
+
+## 🛠️ Run Locally
 
 ```bash
-# npm
+git clone https://github.com/0youri/flick.git
+cd flick
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+Create a `.env` file in the root of the project and add your TMDB API key:
 
-Start the development server on `http://localhost:3000`:
+```env
+TMDB_API_KEY=your_tmdb_api_key_here
+```
+
+Then start the dev server:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
