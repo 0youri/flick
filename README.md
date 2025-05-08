@@ -12,7 +12,6 @@
 - **Language**: [TypeScript](https://www.typescriptlang.org)
 - **Design**: [TailwindCSS](https://tailwindcss.com)
 - **State Management**: [Pinia](https://pinia.vuejs.org)
-- **Animations**: [GSAP](https://greensock.com/gsap/)
 - **API**: [TMDB](https://www.themoviedb.org/documentation/api)
 - **Deployment**: [Netlify](https://www.netlify.com)
 
